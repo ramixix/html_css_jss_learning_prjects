@@ -1,0 +1,117 @@
+.content{
+
+}
+
+.sidebar{
+
+}
+
+body{
+    background: linear-gradient(to bottom ,rgb(17, 188, 211),rgba(165, 253, 234, 0.5));
+    animation-name :  fade-in;
+    animation-duration: 2s;
+}
+
+
+
+#main{
+    display: grid;
+    grid-template-columns: 70% auto;
+    grid-gap: 50px;
+    width: 100%;
+}
+
+
+
+.sidebar{
+    background: linear-gradient(to bottom , rgb(255, 174, 0), rgba(60, 240, 255, 0.1));
+ 
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+    transform: translate(0px , -10px);
+
+    
+    
+}
+
+
+.subtitle{
+    font-family: 'Lato', serif;
+}
+
+
+
+img{
+    width: 350px;
+    height: 200px;
+
+    transition: all 500ms;
+}
+
+img:hover{
+    width: 400px;
+    height: 250px;
+}
+
+p{
+    font-family: 'Lato', sans-serif;
+    font-size: larger;
+     
+}
+
+
+li{
+    font-family: 'Lato', serif;
+    font-style: bold;
+    
+}
+
+
+h2{
+    font-family: 'Lato', serif;
+}
+
+
+.image-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.image-grid > img {
+    margin : 10px;
+}
+
+
+#image-1 {
+    float: right;
+    margin: 20px;
+}
+
+
+.post{
+    border: 2px solid rgb(197, 35, 49);
+    margin: 5px;
+    padding: 5px;
+
+    transition: color 400ms;
+}
+
+
+.post > a {
+    text-decoration: none;
+    font-family: 'Lato', serif;
+    color: rgb(25, 0, 255);
+}
+
+.post > a:hover {
+    color: rgb(62, 73, 175);
+}
+
+
+@keyframes fade-in{
+    from { opacity: 0;}
+    to {opacity: 1;}
+}

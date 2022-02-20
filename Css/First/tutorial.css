@@ -1,0 +1,438 @@
+h2{
+    color:yellow;       /* element tag (header selector) */
+}
+
+.title{
+    color:blue;         /* class tag (class selector) you can more than one class to a tag */          /* power of the tags: element tag < class tag < id tag */
+}
+                                                                /* there is someting that is more powerful that all of these three and that is in-line styling 
+                                                                (using style inside html we dont need css for inline styling*/
+#table-row{
+    color: rgb(236, 182, 3);        /* id tag (id selelctor) */
+}
+
+/* pesudo selector can add some cool fitures to our website for example with 'hover' you can run the changes and setting when your mouse is on the specified part.
+example in below we say that change the color of every elements between the h1 tag to brown anytime mouse is on the tag and when mouse is not on them display them 
+normal*/
+h1:hover{
+    color: brown;
+}
+
+/* we also have something as parent and child. in 'unordered list' <ul> we usually have 'list item' <li> inside them as child 
+so any time we can define to make chagne to a specfic child
+1. :first-child
+2. :last-child
+3. :nth-child(n)
+4. :only-child      just when our element is just the only child of it's parent */
+
+li:first-child{
+    color: aliceblue;
+}
+
+li:last-child{
+    color: antiquewhite;
+}
+
+li:nth-child(2){
+    color: aquamarine;
+}
+
+
+/* also there are some pesduo selector special for a tag for example in anchor <a> tag well have link and visited selectors to chagne
+the setting for our link before and after clicking on it*/
+
+a:link{
+    color:purple
+}
+
+a:visited{
+    color: blue;
+}
+
+/* we can select some specific tags 
+for example we can say to change the color of the every anchor <a> tag after a paragraph <p> tag . we specify this by using '+' sign
+between this two tags 
+we also can specified selectors for elements that are followed by eachother but share the same pattern */
+p+a{
+    color: chartreuse;          /* apply the setting to every anchor tag that is right after the paragraph tag*/
+}
+
+textarea~button{
+    color: cyan;                /* apply the setting to every button after the textarea tag but if they share the same parent means that if they are child of the same parent*/
+}
+
+
+
+
+/*  we also can apply some specific setting to every child of a tag and we do it usign [parent] > [child] {} 
+if there is parent and a child but the child has another parents inside the general parent, to apply the setting
+to this child using parent we to the same thing but this time we don't specify directy the child [parent] [child]*/
+ul>li{
+    color: darkcyan;                /* direct child. it just change the childs that are directly child of the parent*/
+}
+
+ul il {
+    color: aliceblue;           /* indirect child. it also change any direct child*/
+}
+
+
+
+
+/* we also can use attribute selector. define some specific attribute for a tag and apply setting to that elements */
+h2[attr=value]{
+    apply setting;
+}
+
+/* if we use a carrot '^' sign before the equal sign we say any attribute of the tag that starts with the specified value what comes after doesn't matter
+    if we use a dollar '$' sign before the equal sign we say any attribute that ends with our specified value what comes first doesn't matter
+    if we use a asteric '*' sign before the equal sign we say any attribute of the tag that containg the value that we specifyied */
+
+h2[class^=title]{
+
+}
+
+
+
+/* selectors that we use so far, are used to target an element but the actuall property makes the changes that we want
+to the element so without property the selectors are kind of useless
+so after you target your element with selectors define the properties for your target 
+the property is always followed by colon ':' and the next is the value and at the end ues semicolomn ';' to end your line 
+
+
+selector{               // the curly bracket{} defien the css blocks where the properties is going to be written and then apply to our selected element
+    proprty;value;
+    property2:value2;
+}
+*/
+
+
+/* we saw how to change the color of an element using 'color:value;' property we also can change the background color of an elemnt using 
+the 'backgorund:value;' property 
+you also can change the background to an image from computer or any where in website for this porpose use the background property but this time
+instad of using a color or rgb use 'url()' function that gets address of the image as parameter ==> ex :'background : url(https//:google.com/imgae/lion)'*/
+body{
+    background : url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimagevars.gulfnews.com%2F2019%2F10%2F13%2Flion-generic_16dc5bad72f_large.jpg&f=1&nofb=1);
+}
+
+
+/* when you add a image as you background the first thing you realize is that if your image is not big enough to cover the space it going to
+repeat itself many times until it fills the entire space you specify for background and that is because the property 'background-repeat' is 
+set by defualt to 'repeat' --> 'background-repeat: repeat;'  and you easily can change propery value to no repeat using 'no-repeat' value */
+body{
+    background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimagevars.gulfnews.com%2F2019%2F10%2F13%2Flion-generic_16dc5bad72f_large.jpg&f=1&nofb=1);
+    background-repeat: no-repeat;
+}
+
+/* but here the problem is that when it does not repeat the image it just add one image with the sized that orginal image
+has and leave it like that and it going to be wrong and not what we want so in this case use the 'background-size' property
+ex : 'background-size: [height]px [weidth]px ' */
+/* it's a little hard to specify the exact value for image to cover background perfectly without any repeating if it is on.
+in this case we can use the value 'cover' that is going to do this automatically for us
+we can also use the 'contain' value that is going to do the samething as cover does but in this case it keeps the portain and 
+scrach the image as it can without changing the portain */
+body{
+    background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimagevars.gulfnews.com%2F2019%2F10%2F13%2Flion-generic_16dc5bad72f_large.jpg&f=1&nofb=1);
+    background-repeat: no-repeat;
+    background-color: steelblue;
+    background-size: 400px 100px;
+    background-size: cover;
+    background-size: contain;
+}
+
+
+/* Gradients: the slow transition between colors.
+    and in total there is two types of gradients : 1.radio and 2.linear
+    radio is kind of cirular and move out form center and depending on percenteces and how much you want from each color
+    linear gradints is a smooth transition between colors in a linear way (left to right, bottom to top, top left to bottom right...)
+    
+    for linear gradient use the 'linear-gradient(direction, color[s], ... add as many you like)'
+   
+    in the other hand radial gradient don't work the say way that linear does, no direction in radio instead we
+    can define percenteges for each color that we want for radial gradient use the value 'radial-gradient(certain amount of colors and percetages of each)' 
+    function by the way you can use the background-size properties for radial gradient
+    you can change the shape in radial gradient : using 'circle' or 'elipse' in function */
+
+
+#dev-linear{
+    background: linear-gradient(to right , red , blue, green);
+}
+
+#dev-radial{
+    background: radial-gradient( circle , red 20%, blue 40%, green 50%);
+}
+
+
+
+
+/* we have absolout and relative units the absolout units are the ones that is going to be 
+the same anytime and anywhere no matter in tv screen or mobil screen (like inch, cm,)
+
+relative units are the ones that depends on other values or things for example if i define:
+height = 400px;
+width = 70%;
+width will be relative becuase it depends on the screen size it take 70 percent of the screen so if you be in bigger screen it
+ would be bigger and if you in smaller screen it would be smaller
+relative units are very usefull as the websites can be reach through bounch of different devices with differnet screens
+
+the pixel is also kind of a relative unit because different screens have different resuloutions so the number of the pixels 
+will be different in different devices (dpi) but it does not change so much and is not clear 
+
+
+we have:
+pt : pinter , that are bigger than px
+pc ; is much bigger than the px and pt
+
+
+relative types:
+[number]percetages
+[number]em : for example if we use it in font and write 2 in place of number according to amount of our font size is going to make the font 2 times bigger than what we define it before
+[number]vh: view height
+[number]vw : view width
+*/
+
+
+
+
+
+
+
+
+/* text manipulation : things that you can change no matter font and size of the text is
+
+ we can use the 'text-decoration: none| underline| overline| line-through; ' property to make some changes 
+ to your text and mostly your links 
+
+ there is another property 'text-transform: uppercase| lowercase| capitalize;' that is pretty clear
+
+ there is another property 'text-align: center| left| right| justify ' what justify does is that it takes the text
+ and it kind of matches it, that all text fit in the same width (strach as far as possible) line will have the same width
+ 
+ */
+
+
+
+ /* there is a property for font of text, name 'font-weight:[number];' to change the boldness of a text. different fonts accept different
+ font weight so try it out and see whats good for you 
+ 
+ the 'font-style: normal| italic| oblique'  --> normal is the defult one , oblique is just a little more italzie than italic
+ */
+
+ /* you can add external fonts and add them to font-family */
+
+ 
+
+ /*  one of the part of the box models is borders 
+   so for adding a 'border' property to a element you can do it so easy by using the 'border: [size(px,cd..)] [style] [color]
+   size : any size any measure you want
+   style : there are alot but 4 main one: solid, dotted, dashed, double  and as their name iplies they are so easy to use use them and see what is what
+   color: any thing could be a specific color could be a rgb or hexdecimal so set what you want*/
+#border{
+    border : 10px solid blue;
+    border : 10px dotted red;
+    border : 10px dashed green;
+    border : 10px double orange;
+}
+
+
+   /* margin and padding
+    padding: the distance between the content of element and the border
+    margin : the distance between the border and the elements outside
+    you can use 'padding:[number(px,cm,mm..)]' and 'margin:[number(px,cm,mm...)]'  propertiyes to difine padding and margin.
+    when you just using a number to specify the padding or margin it will apply to every direction (top, bottom, left, right)
+    you want a specific direction just add it to name of property for example if you just apply padding just to bottom use 'padding-bottom : 10px '
+    but it could be tedious if using it alot you also do the same thing with "padding : top right bottom left;" 
+    the same setting can apply for margin but in margin the top and bottom are togther as well as right and left what is mean 
+    "margin : top-bottom right-left" so by specifying top you automatically set the bottom to the same value*/
+
+#padding{
+    padding : 10px;     
+    padding-left: 0%;
+    padding-top: 0%;
+    padding-right: 0%;
+    padding-bottom: 0%;
+    padding : 0 10px 0 10px;        /* top=0 , right=10px , bottom=0, left=10px*/
+}
+
+#margin{
+    margin: 10px;
+    margin-top: 0em;
+    margin-right: 0em;
+    margin-bottom: auto;
+    margin-left: 0em;
+    margin : 10px 20px;    /* top-and-bottom=10px, right-and-left=20px */
+}
+
+
+
+
+/* "float:(left|right) " property change the flow over element to specified direction
+    and "display:(none|inline|inline-block)" display property can change the way the element displayed by defualt
+    none: eliminate the element from the page and you can't see the element any more it won't take any place and it will be deleted form the page however the code is still is there(used in some game sites)
+    */
+
+
+
+
+
+
+
+/* flexbox : stands for flexible box , a display type that comes with a range of properties allowing you to arrange items easily.
+    it is an alternative to using displays, float,and other layout properties
+    the flexbox split into two main parts : container and items 
+    container : is the parent element in which the display type is active . this is usually in the form of a div
+    items : are child element of the container, and make up the content of the box (can include imgaes, span , links anything you want)
+    flexbox mainly use to layout a website
+    
+    make a flexbox: just give the display property the value of flex "display:flex" so by this you make you flex container and 
+    now you can change the defualt setting of your flex container with some properties.
+    
+    "flex-direction: column | column-reverse | row | row-reverse ; " property change direction the way that child are displayed
+    "flex-warp: warp | nowrap;" if the items get to much instead of squeezing them in a row or column it make a new row or column 
+    
+    when using flex we can use justify-content property to justify the items in the flexbox it can set to alot of values but the most common ones are
+    "justify-content:center|flex-end|flex-start|space-between|space-around"  the center value justify items in center, flex-end justify them in end
+     and flex-start justify them in start. the space-between put the same amount of space between items and speread them out as much as possible.
+     space-around is doing the same thing as space-between but in space-between items in the most left or right don't have space form the sides in the other
+     hand space-around put space in all sides and spread out the items. 
+    
+
+
+    another property that we can use when using flexbox is align-items, this property is similar to justify-content but here we 
+    change items vertically instead of horizantally. "align-items:center|flex-start|flex-end|strech|baseline;" the center, flex-end, flex-start
+    works as they do in justify-contenct except that here is vertically, strech will strech the hieght of items from top to bottom, and the baseline
+    will keep the items in the same line no matter if the height of the items be different.
+    */
+
+
+
+
+    /*  another three important properties that comes with flex items are flex-basis, flex-shrink, and flex-gorw you can use them directly in html code
+    flex-basis: define the minumum width of a flex item
+    flex-grow : with this property you can define space to items of the flex ex: you can say the a specific item that n times space according to others 
+    flex-shrink : you can define the rate of the an item to shrink if the page change size (for example in differnet devices) if you set this to 0 it won't shrink and if you want a item to shrink much faster from the others give it higher value
+    the defult for flex-shrink is 1 so if you set it to 1 it will act the same way as if you didn't specify it
+    
+    flex property : you can use it to combine all of three flax-grow, flex-basis and flex-shrink in one property. you also difne this property
+    insdie the style variable inside the html code the format of flex property "flex: grow shrink basis" . for example flex: 1 1 100px;*/
+
+
+    /* when using 'align-self' property to align a specific item. keep in mind if you used the align-items property 
+    to align flex items vertically if you use the align-self here it will overwrite the align-items property.
+    we use this property inside the html code like the flex-grow and other properties.
+    ex align-self: flex-start */
+
+
+
+    /* Grid : another way to layout the website like flex. Grid is more manual than flex, providing more tools.
+    for using grid we do the same things that we did when we want to set flex
+    
+    
+    we can use 'grid-template-columns' and 'grid-template-rows' to determine the number of the columns and rows that we want.
+    when we using any of these two properties the values sperate with space specify the number of the columns of rows we want,
+    for example : "grid-template-columns : 10px 50px 30px;" will build three columns the first one is 10px width, second 50px and last
+    one is 30px. when using these values for detemining columns and rows can mess up because of that we can use 'auto' as value to 
+    divide the space evenly and make columns and rows that have the same column width and row height.
+    
+    
+    we can use 'justify-content' and 'align-content' properties to justify and align items horizontally and vertically as 
+    we did while working with flex(in flex we had align-items).
+    'justify-content: start | end | center | space-evenly | space-around' , end and start and center are pretty clear. space-evenly and space-around are 
+    the same as space-between and space-around in flex.
+    'align-content : start | end | center | space-between | space-around | space-evenly'  align vertically.
+    
+    we can use 'grid-column-gap' and 'grid-row-gap' to specify the gap between columns and rows in our layout 
+    you also can do this using just 'grid-gap' property to specify the row and column just in one line. ex:
+    
+    grid-column-gap : 150px;
+    grid-row-gap : 300px;                 ===    grid-gap : 300px 150px;  ( grid-gap : [row-gap] [column-gap]; )
+    
+    
+    
+    when we make grid columns and rows there will some lines to specify the columns and rows and commonly they are unvisible 
+    you can specify the area of a specific item in html file using 'grid-column' and 'grid-row'. when using these for example
+    when using the grid-column you can say a specific item area from one line to another sperated by '/', ex " grid-column : 1/3; "
+    it says give this item an area for line 1 to line 3. or if you don't know the exact number of lines in a layout use 'span' keyword
+    ex : " grid-row : 1/span 2 " it says give an area from line 1 and goes two line forward.  */
+
+
+    /* transition property is a property for changnig the setting of an element form base class to anothers in smooth way 
+    make the items look like animations "tansition : [properties you want to change, you can use 'all' keyword to use them all] [the time to go from one property to another] [what kind of style you want your transitio apply|ease|linear|ease-in-out] [the time you want wait before apply the property and the time last after transition is done]"   
+    */
+
+
+
+    /* transformation functions : functions that phisically change the elements.(like some properties but here we use predefined functions) we use all 
+    of this function as value to ' transform: ' property.
+
+    translate(x-axies, y-axies) : shift element by specified x and y positions (x-axies: if value be positif it means shift element to right by that value
+    and if it is negative shift it to left, and for y-axies if positive it means shift down and negative shift up )
+    
+    scale(integer) : is going to scale up specified element by the value you passed for example if you pass 'transform:scale(2.5)' it is going 
+    to make the element 2.5 times bigger than what size it is currently. it can change other properties like padding for marging, and mess with layout
+    
+    rotate(VALUEdeg) : is going to rotate element by degres you specify as value (positif=clock, egative=clockwise) for example 'transform : rotate(45deg);'
+    keep in mind this function rotate element according to center of that element
+
+    skewX(deg) | skewY(deg)  : rotate element according to the x-axies and y-axies (try this it is a little hard to explain)
+    
+    matrix( scaleX, skewX, skewY, scaleY, translateX, translateY) : matrix funtions is a shortcut for most of the functions that we see above
+    (it does not include rotate funtion). first and fuorth argumnets say at what scale you want your element to get bigger in x-axies and y-axies(should be integer,flaot)
+    second and third are skew functions that rotate element according to x and y axies(we use degres in skewX and skewY functions but in matrix function 
+    while specifying the skewX and skewY we just write it as decimal for example 45 degres will be written and 0.45). fifth and sixth arguments are the 
+    shift values(just integers not needed to add px postfixes)
+    example : " transform : matrix(1, 0.45 , 0.45, 1 , 100, 50); "    
+    */
+
+
+
+
+    /* Animations with keyframes : in transition and others that we studied we should specify the propeties for a specific class or element but 
+    with animations we can define an animation and assign it to any class or element we want.
+    you can start working with animation by writing a block starting with '@keyframes' and following by a name and curly brackets
+    ex: " @keyframes red-to-black{  } "  and inside you can specify a lot of options. each animation has at least two keyframes and they are
+    'from{}' and 'to{}' that specify the start and end of the animaiton.
+    ex:
+        @keyframes hello{
+            from{ background:red ; text-size:30px}
+            to { background:blue; text-size:50px}
+        }
+        
+    if you need more than two frames you also can specify percentage.ex:
+    
+        @keyframs hello{
+            0% { background : red;}
+            32%{ backrougnd : pink;}
+            50${ background : orange;)
+            77%{ background : green;)
+            100%{ background : blue;)
+        }
+        
+        
+    after building the keyframs and all we need to add our animation to our element, we can add our animation to any element using 
+    'animation-name' property and then give the exact name of our keyframes animation to it
+    ex : " animation-name : hello; " this apply animation to our element but after this it does not work we need to specify some
+    another properties to make it work. the 'animation-duration' is time that our animation takes from start to end and the defualt 
+    value to this property is zero so that is why our animation doesn't work after specifying animation-name.
+    
+    now all we need is some properties to style our animation we can use 'animation-timing-function :' property to specify the style of the animaiton 
+    that applyed to our elements. for example if we give it 'ease' value it is going to apply animation and in every keyframes that we specify it is going
+    to wait for a moment and continue until it reaches the end but if we give 'linear' as value it is going to go from start to end without any waiting when 
+    reaches to another keyframe and run them by equal run time.
+    
+    'animation-delay' is another property and it used to determine the delay time for animation for example if you set 2s value to it, our animation
+    is going to run 2 seconds after our page reload. you also can give it negative value for example -2s and what happen is when you reload the page
+    it looks like that our animation was runned 2 second ago and is in way to end.
+    
+    'animation-iteration-count' property determine how many time we want our animation appyled to our element. normally our animation is going 
+    to apply once after page reload and then goes way as noting happen but by using this property we can loop it for many times we want. you also can 
+    give it the value 'infinite' to loop it infinitly 
+    
+    'animation-direction' property determine the start and ending points , defualt value for this property is 'normal' (it goes form 0% to 100%)
+    but you also asign it to 'reverse' which is going to go from 100% to 0%. another value that you can asign to animation-direction property is 'alternate'
+    that goes from 0% to 100% and then come back again from 100% to 0%. we also have 'alternate-reverse' that is going to do the same thing but in reverse order.
+    (keep in mind the alternate is working when your animation-iteration-function property is as least 2 )
+    
+    you can apply all six properties above using just 'animation:' property. so it takes six values separated by space the first values is 
+    the name of our animaiton the second is the duration time the third for style of the animation , forth one for delay time, fifth one iteration count 
+    and last value for direction of the animation 
+    ex : "animation : hello 3s linear 0s 2 alternate-reverse" */

@@ -1,0 +1,80 @@
+html{
+    height: 100%;
+}
+body{
+    background-color: #2F3035;
+    background-image: url(/portfolio12.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+}
+
+header {
+    
+    height: 118px;
+    text-align: center;
+}
+
+header img{
+    height: 100%;
+}
+
+nav{
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+main{
+    background-color: rgba(0, 0, 0, 0.479);
+    height: 400px;
+    text-align: center;
+    padding-top:  80px;
+    padding-left: 240px;
+    padding-right: 240px;
+}
+
+footer{
+    background-color: yellow;
+    height: 100px;
+}
+
+h1{
+    font-size: 84px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+    font-size: 18px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.link{
+    border: white solid 1px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.link a{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}

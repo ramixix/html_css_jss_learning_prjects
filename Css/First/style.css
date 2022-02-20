@@ -1,0 +1,170 @@
+body{
+    background:  linear-gradient(to bottom, rgb(147, 232, 238), rgba(216, 235, 48, 0.4));
+    background-size : contain;
+    font-size:1.15em;  
+    text-transform: capitalize;
+    text-align: justify;
+    font-family: sans-serif;
+}
+
+h2:hover{
+    color:rgb(38, 137, 150);       /* element tag*/
+}
+.title{
+    color:blue;         /* class tag*/                      /* power of the tags: element tag < class tag < id tag */
+}
+                                                                /* there is someting that is more powerful that all of these three and that is in-line styling (using style inside html we dont need css for inline styling*/
+#table- row{
+    color: rgb(236, 182, 3);        /* id tag*/
+}
+
+#a1:link{
+    color:blue;
+    text-decoration: none;
+}
+
+#a1:visited{
+    color: red;
+}
+
+/* 
+p+a{
+    color: chartreuse;
+}
+*/
+
+ul>li{
+    color: gold;
+}
+
+h1[class=title]{
+    color: red;
+    font-weight: 600;
+    font-style: italic;
+}
+
+img[src="/background.jpg"]{
+    border: 2px double black;
+    padding : 10px;
+    margin: 10px;
+}
+
+#linear{
+    height: 200px;
+    width: 400px;
+    background: linear-gradient(to right, rgb(104, 255, 222), rgba(104, 255, 222, 0));
+}
+
+#radial{
+    height: 70%;
+    width: 400px;
+    background: radial-gradient(circle, rgba(211, 48, 48, 0.5) 30% , rgba(36, 36, 201, 0.8) 40%, rgba(8, 214, 8, 0.5) 30%);
+}
+
+.img{
+    height: 80vm;
+    width : 80%;
+}
+input{
+    font-size: 15px;
+    margin: 5px;
+    font-family:sans-serif ;
+    width: 300px;
+    display: grid;
+    align-content: start;
+}
+textarea{
+    width: 320px;
+    display: block;
+}
+.container{
+    background-color: rgb(250, 250, 250);
+    margin : 10px;
+    height: 300px;
+
+    display: flex;
+    flex-direction : row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.container-item{
+    background: rgb(36, 130, 39);
+    color: white;
+    font-size : 25px;
+    text-align: center;
+
+    width: 70px;
+    line-height: 50px;
+    margin: 10px;
+}
+
+.grid-container{
+        background-color: rgb(250, 250, 250);
+        margin: 10px;
+        height: 360px;
+
+        display : grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto ;
+        justify-content: space-evenly;
+}
+
+.grid-item{
+    color: black;
+    font-size: 25px;
+    text-align: center;
+
+    width: 70px;
+    line-height: 40px;
+    margin: 10px;
+}
+
+.submit-button{
+    margin : 20px 10px;
+    padding : 10px 15px;
+    border : none;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    background: rgb(44, 32, 216);
+
+    transition: all 500ms ease-in-out ;
+    transform: translate(100px , 5px); 
+
+}
+
+.submit-button:hover{
+    color: #000;
+    background: rgb(43, 163, 233);
+    padding : 20px 30px;
+    
+    
+}
+
+#about-me{
+    animation-name: change-background;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 3;
+    animation-direction: alternate-reverse;
+    
+}
+
+@keyframes change-background{
+    
+    0%{ background :red;
+        transform: translate(0px , 0px);
+    }
+
+    50%{ background : yellow;
+        transform: translate(10px , 10px);
+    }
+
+    100%{ background :black;
+        transform: translate(20px , 20px);
+    }
+}
